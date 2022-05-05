@@ -15,7 +15,7 @@ const isNumber = (item) => {
  *   operation:String  +, -, etc.
  */
 
-export default function mayanCalculate(obj, buttonName) {
+export default function Calculate(obj, buttonName) {
   if (buttonName === 'AC') {
     return {
       total: '0',
