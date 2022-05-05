@@ -15,7 +15,7 @@ const isNumber = (item) => {
  *   operation:String  +, -, etc.
  */
 
-export default function Calculate(obj, buttonName) {
+export const Calculate = (obj, buttonName) => {
   if (buttonName === 'AC') {
     return {
       total: '0',
@@ -27,7 +27,9 @@ export default function Calculate(obj, buttonName) {
 
   if (isNumber(buttonName)) {
     if (buttonName === '0' && obj.next === '0') {
-      return { };
+      return { 
+          total: '0',
+          nextMayan:'\u{1d2e0}'};
     }
     // If there is an operation, update next
     if (obj.operation) {
@@ -60,7 +62,7 @@ export default function Calculate(obj, buttonName) {
       const result = operate(obj.total, obj.next, obj.operation);
       const resultInMayan = convertToMayan(result).join('');
       return {
-        total: convertToVigesimal(result),
+        total: result,
         next: null,
         operation: null,
         mayan: resultInMayan,
