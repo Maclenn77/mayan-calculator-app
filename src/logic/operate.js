@@ -1,6 +1,6 @@
 import BigNumber from "bignumber.js";
 
-export default function operate(numberOne, numberTwo, operation) {
+export const operate = (numberOne, numberTwo, operation) => {
   const one = BigNumber(numberOne, 20);
   const two = BigNumber(numberTwo, 20);
   if (operation === '+') {
